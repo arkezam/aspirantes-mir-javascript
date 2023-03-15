@@ -7,7 +7,7 @@ console.log(sum([1, 2, 3])) // 6
 console.log(sum([10, 8, 12, 5])) // 35
 console.log(sum([])) // 0
 
-
+// ----------------------------------------
 // Utilizando for in
 const sum2 = (arreglo2) => {
     let acc = 0
