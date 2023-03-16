@@ -1,4 +1,4 @@
-const join = (arreglo) =>{
+const join = (arreglo) => {
     let a = '';
     for(let item of arreglo){
         a += item + ' ' 
