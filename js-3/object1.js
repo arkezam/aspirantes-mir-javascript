@@ -15,8 +15,8 @@ const pedro = {
     edad: "30",
     activo: true,
     hobbies: ["programar", "squash", "piano"],
-    saluda:() => {
-        return "Hola, me llamo " + pedro.nombre 
+    saluda: function() {
+        return "Hola, me llamo " + this.nombre;
     }
 } 
 
