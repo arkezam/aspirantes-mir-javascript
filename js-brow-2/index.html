@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    body{
+        background-color: #CFCFCF;
+        
+    }
+    .contenedorprincipal{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+    }
+    .contenedor1{
+        display: flex;
+        flex-direction: row ;
+        height: 100px;
+        width: 400px;
+        box-shadow:  4px 1px 48px 0px rgba(68, 68, 68, 0.79);
+        background-color: white;
+    }
+    .contenedor2{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 400px;
+        box-shadow:  4px 1px 48px 0px rgba(68, 68, 68, 0.79);
+        background-color: white;
+    }
+    .fila1{
+        padding-top: 20px;
+        width: 50%;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+         
+       
+    }
+    .fila2{
+        padding-top: 20px;
+        width: 50%;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+         
+    }
+    .tareas{
+        padding: 5%;
+    }
+    .btnDelete{
+        margin-top: 60px;
+        margin-left: auto;
+        width: 150px;
+        color: white;
+        background-color: rgb(142, 5, 5);
+    }
+    .btn{
+        color: white;
+        background-color: rgb(46, 5, 142);  
+    }
+ 
+</style>
+<div class="contenedorprincipal">
+        
+    <div class="contenedor1">
+        <div class="fila1">
+            <input type="text" name="" id="texto" placeholder="Ingresar Tarea">
+        </div>
+        <div class="fila2">
+            <button class="btn"> Add </button>
+        </div>
+    </div>
+    <div class="contenedor2">
+        <div class="tareas">
+            <input type="checkbox" name="tarea1" id="tarea1">
+            <label for="tarea1">Lista de Tareas</label>
+            <br>
+ 
+        </div>
+        <button class="btnDelete">Delete All done!</button>
+    </div>
+
+</div>
+
+<script>
+        const input = document.querySelector('#texto');
+        const resultado = document.querySelector('#resultado');
+        const btn = document.querySelector('.btn');
+        const btnDel = document.querySelector('.btnDelete');  
+
+        btn.addEventListener('click', function() {
+        let texto = input.value;
+ 
+        var x = document.createElement("input");
+        var lavl = document.createElement("label");
+        var br = document.createElement('br');
+        lavl.setAttribute("for",texto);
+        lavl.textContent = texto;
+        x.setAttribute("type", "checkbox");
+        x.setAttribute("value", "abc");
+        x.setAttribute("name", texto);
+        x.setAttribute("id", texto);
+        misTareas = document.querySelector(".tareas");
+        misTareas.appendChild(x);
+        misTareas.appendChild(lavl);
+        misTareas.appendChild(br);
+        });
+
+        btnDel.addEventListener('click', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                checkbox.parentNode.removeChild(checkbox.nextSibling);
+                checkbox.parentNode.removeChild(checkbox);
+            }
+            
+        });
+
+        });
+</script>
+</body>
+</html>
