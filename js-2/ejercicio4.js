@@ -9,3 +9,5 @@ const join = (arreglo) => {
 miarre = [1,14,8,9]
 
 console.log(join(miarre))
+
+ 
